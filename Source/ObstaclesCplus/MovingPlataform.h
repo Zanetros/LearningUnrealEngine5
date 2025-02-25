@@ -16,10 +16,16 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	
 
 public:	
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere)
-	FVector MyVector = FVector (-13420.000000,-580.000000,4000.000000);
+	UPROPERTY(EditAnywhere, Category= "Moving Platform")
+	FVector PlatformVelocity = FVector(0, 0, 0);
+
+ 	UPROPERTY(EDITANYWHERE, Category= "Moving Platform")
+  	float MoveDistance = 100;
+	
+	FVector StartLocation;
 };
